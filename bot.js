@@ -14,7 +14,7 @@ const wallet = ethers.Wallet.fromPhrase(seedPhrase);
 const signer = wallet.connect(provider);
 
 const botToken = process.env.BOT_TOKEN;
-const GREENPILLBR_CHAT_ID = process.env.ATHUS_DEV_CHAT_ID;
+const GREENPILLBR_CHAT_ID = process.env.GREENPILL_BR_CHAT_ID;
 
 // Endereço do contrato EAS na rede Sepolia
 const EASContractAddress = "0xC2679fBD37d54388Ce493F1DB75320D236e1815e"; // Sepolia v0.26
@@ -68,8 +68,8 @@ async function attest(eas, data) {
      };
  
      const tx = await eas.attest(attestationData);
-     console.log("Transaction Hash EAS: ", tx.hash);
-     return;
+     console.log("Transaction Hash EAS: ", tx);
+
   } catch (error) {
      console.error("Failed to create attestation:", error);
   }
